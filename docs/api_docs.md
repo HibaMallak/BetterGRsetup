@@ -1,12 +1,13 @@
 # API Gateway Documentation
-
+NOTE: should this stay a separate file or should we merge it in the developer documentation?
 ## Overview
 
 The API Gateway serves as the central entry point for handling requests from the frontend to the backend microservices in the BetterGR system. It facilitates communication between the frontend and various backend services using gRPC, ensuring efficient and scalable interactions.
 
 
-The system follows a microservices architecture, with the API Gateway acting as an intermediary between the Next.js frontend and the backend microservices.
-This file provides insights into the available routes, authentication mechanisms, and request/response structures.
+The system follows a microservices architecture, with the API Gateway acting as an intermediary between the Nuxt.js frontend and the backend microservices.
+
+This file provides insights into the available routes, authentication mechanisms and request/response structures.
 
 ## System Architecture
 
@@ -73,7 +74,7 @@ Below is the detailed operations flow when the API Gateway receives a request:
 
 ### API Endpoints
 
-The API Gateway exposes RESTful endpoints that map to gRPC services internally. 
+The API Gateway exposes GraphQL endpoints that map to gRPC services internally. 
 To view endpoints for each microservice:
 - [Students Microservice](students_microservice_doc.md)
 - [Staff Microservice](staff_microservice_doc.md)

@@ -1,5 +1,5 @@
-# BetterGr Project Documentation
-## Introduction
+# BetterGR Project Documentation
+
 
 BetterGR is a comprehensive Learning Management System (LMS) designed specifically for universities. The goal of BetterGR is to streamline the management of courses, users, and educational resources, providing an intuitive and scalable platform for administrators, instructors, and students. This documentation serves as a central resource for understanding, deploying, and contributing to the BetterGR project.
 
@@ -23,5 +23,5 @@ BetterGR aims to modernize university learning environments by offering robust f
 
 
 ## Users & Developers
-For BetterGR users, please go to [Users Documentation](will be added soon - link to users_doc.md).
-For BetterGR developers and contributors, please go to [Developers Documentation](will be added soon - link to developers_doc.md).
+- For BetterGR users, please go to [Users Documentation](will be added soon - link to users_doc.md).
+- For BetterGR developers and contributors, please go to [Developers Documentation](will be added soon - link to developers_doc.md).
