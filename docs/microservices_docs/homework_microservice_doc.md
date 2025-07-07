@@ -11,7 +11,6 @@ Will add soon...
 ## API Gateway Endpoints
 
 
-NOTE: might change...
 1. `GET/homework/{id} `– Retrieves information of a specific homework.
 2. `POST/homework`– Creates a new homework assignment.
 3. `PUT/courses/{id}/homework/{id}`– Updates a homework assignment.

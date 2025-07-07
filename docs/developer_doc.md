@@ -178,8 +178,7 @@ Key features of the microservices architecture:
    - Provides APIs for retrieving and updating grades for students
 
 Each microservice is designed to operate independently while collaborating with other services to provide a seamless user experience. For detailed documentation for each microservice, refer to the respective documentations 
-in [link to MS-doc-directory].
-NOTE: ADD LINK!!
+in [Microservices Documentations](microservices_docs).
 
 ## Contribution Guidelines
 
@@ -240,11 +239,7 @@ All work and processes in BetterGR must be documented in the **Backlog Repositor
 
 Contributors should update the issue with progress, discussions, and any relevant links to pull requests or commits. This ensures transparency and traceability throughout the development process.
 
-NOTE: deployment+ CI/CD will be added soon.
 ## **Deployment**
-  - Deployment process
-  - CI/CD pipelines
-
 
 ### Deployment Process
 
@@ -277,9 +272,9 @@ NOTE: deployment+ CI/CD will be added soon.
       Push the Docker images to a container registry (e.g., Docker Hub).
 
 
-### CI/CD Pipelines
+### CI Pipelines
 
-BetterGR uses GitHub Actions for CI/CD to automate testing, building and deployment.
+BetterGR uses GitHub Actions for CI to automate testing, building and deployment.
 
 ### Example GitHub Actions Workflow
 
@@ -361,7 +356,7 @@ jobs:
 - **Deployment Tools**:
   - [Docker Documentation](https://docs.docker.com/)
 
-- **CI/CD Tools**:
+- **CI Tools**:
   - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 
 - **Database Resources**:

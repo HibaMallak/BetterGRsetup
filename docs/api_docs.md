@@ -1,5 +1,4 @@
 # API Gateway Documentation
-NOTE: should this stay a separate file or should we merge it in the developer documentation?
 ## Overview
 
 The API Gateway serves as the central entry point for handling requests from the frontend to the backend microservices in the BetterGR system. It facilitates communication between the frontend and various backend services using gRPC, ensuring efficient and scalable interactions.
@@ -82,7 +81,6 @@ To view endpoints for each microservice:
 - [Homework Microservice](microservices_docs/homework_microservice_doc.md)
 - [Grades Microservice](microservices_docs/grades_microservice_doc.md)
 
-NOTE FOR EDITOR(HIBA): the links above should be to the respective files soon added.
 
 
 
