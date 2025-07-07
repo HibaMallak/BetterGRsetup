@@ -1,8 +1,10 @@
 # Developer Documentation
 
-BetterGR's Developer Documentation provides comprehensive guidelines for developers looking to contribute to the BetterGR project. It includes technical details on architecture, setup instructions, API documentation and contribution guidelines.
 
-This documentation is designed to assist developers in understanding the project's structure, how to set up their development environment and how to contribute effectively. It is intended for developers who want to contribute to or extend BetterGR and covers setup, architecture, coding standards and contribution guidelines.
+This documentation is designed to assist developers in understanding the project's structure, how to set up their development environment and how to contribute effectively. 
+
+It is intended for developers who want to contribute to or extend BetterGR and covers setup, architecture, coding standards and contribution guidelines.
+
 
 ---
 ## Introduction
@@ -135,7 +137,8 @@ BetterGR integrates with several third-party tools to enhance functionality:
 
 
 ## API Documentation
-  Go to [API Gateway Documentation](will be added soon - link to api_docs.md) for detailed API documentation, including endpoints, request/response formats and authentication mechanisms.
+
+For detailed API documentation, including endpoints, request/response formats and authentication mechanisms, go to [API Gateway Documentation](will be added soon - link to api_docs.md).
 
 
 ## Microservices
@@ -243,8 +246,129 @@ NOTE: deployment+ CI/CD will be added soon.
   - CI/CD pipelines
 
 
+### Deployment Process
+
+**1. Containerization**:
+
+   - All microservices are containerized using Docker.
+   - Each microservice has its own `Dockerfile` specifying the build instructions. 
+    
+        Example `Dockerfile` for a microservice:
+       ```dockerfile
+       FROM golang:1.20-alpine
+       WORKDIR /app
+       COPY . .
+       RUN go build -o main .
+       CMD ["./main"]
+       ```
+**2. Environment Configuration**
+   - Each microservice requires specific environment variables for configuration.
+   - Environment variables are defined in `.env` files for each microservice.
+
+
+**3. Deployment Tools**
+
+   - **Docker Compose**: Used for local development and testing.
+
+
+**4. Production Deployment**
+
+   - **Push Docker Images**:  
+      Push the Docker images to a container registry (e.g., Docker Hub).
+
+
+### CI/CD Pipelines
+
+BetterGR uses GitHub Actions for CI/CD to automate testing, building and deployment.
+
+### Example GitHub Actions Workflow
+
+```yaml
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.3'
+          cache: true
+
+      - name: Download dependencies
+        run: go mod download
+
+      - name: Run tests
+        run: go test -v ./...
+
+      - name: Run go vet
+        run: go vet ./...
+
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: latest
+          args: --config=.golangci.yaml
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.3'
+          cache: true
+
+      - name: Build application
+        run: go build -v ./...
+
+      - name: Build Docker image
+        run: docker build -t grades-microservice:latest . 
+```
+
 ## **Additional Resources**
 
-- Links to documentation, tools, and references
 
-Refer to each section for in-depth technical details and contribution instructions.
+
+- **Official Documentation**:
+  - [API Gateway Documentation](link-to-api-docs)
+  - [Microservices Documentation](link-to-microservices-docs)
+  - [User Documentation](link-to-user-docs)
+
+- **Development Tools**:
+  - [Go Documentation](https://golang.org/doc/)
+  - [Nuxt.js Documentation](https://nuxtjs.org/docs/)
+  - [Vue.js Documentation](https://vuejs.org/v2/guide/)
+  - [GraphQL Documentation](https://graphql.org/learn/)
+  - [Keycloak Documentation](https://www.keycloak.org/documentation)
+
+- **Deployment Tools**:
+  - [Docker Documentation](https://docs.docker.com/)
+
+- **CI/CD Tools**:
+  - [GitHub Actions Documentation](https://docs.github.com/en/actions)
+
+- **Database Resources**:
+  - [PostgreSQL Documentation](https://www.postgresql.org/docs/)
+
+- **Community and Support**:
+  - [BetterGR GitHub Organization](https://github.com/BetterGR)
+  - [BetterGR Issue Tracker](link-to-issue-tracker)
+  - [Contact Support](link-to-support-page)
+
